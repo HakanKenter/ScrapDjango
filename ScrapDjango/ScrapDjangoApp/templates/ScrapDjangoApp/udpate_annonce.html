@@ -1,0 +1,24 @@
+{% extends "ScrapDjangoApp/base.html" %}
+
+
+{% block title %}
+Modifier Annonce
+{% endblock title %}
+
+
+{% block h1title %}
+Mise à jour annonce
+{% endblock h1title %}  
+
+
+{% block content %}
+    <a href="{% url 'all_annonce' %}"><button>Annuler</button></a>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Modifier</button>
+    </form>
+
+{% endblock content %}
+    

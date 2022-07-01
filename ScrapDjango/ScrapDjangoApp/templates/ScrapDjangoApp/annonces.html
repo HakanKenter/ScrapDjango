@@ -1,0 +1,32 @@
+{% extends "ScrapDjangoApp/base.html" %}
+
+
+{% block title %}
+    Annonces
+{% endblock title %}
+
+
+{% block h1title %}
+    Annonces
+{% endblock h1title %}  
+
+{% block content %}
+
+<a href="{% url 'add_annonce' %}"><button class="mt-2 mb-2 rounded p-1 bg-success text-white">Ajouter une annonce</button></a>
+    
+<div class="container">
+    {% for annonce in Annonce_object %}
+        <div class="col-lg-4 mt-3 mb-3 border p-3 d-flex flex-column justify-content-center ">
+            <h2>Titre: {{annonce.title}}</h2>
+            <img src={{annonce.photo}}>
+            <p>Description: {{annonce.description}}</p>
+            <b>Prix: {{annonce.prix}}</b>
+
+            <a href="{% url 'details_annonce' annonce.id %}"><button>Voir</button></a>
+        </div>
+    {% endfor %}
+
+</div>
+        
+{% endblock content %}
+    

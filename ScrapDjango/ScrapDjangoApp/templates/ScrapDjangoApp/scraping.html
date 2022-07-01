@@ -1,0 +1,31 @@
+
+
+{% extends "ScrapDjangoApp/base.html" %}
+
+
+{% block title %}
+    Données Scrapé
+{% endblock title %}
+
+
+{% block h1title %}
+    Données Scrapé
+{% endblock h1title %}  
+
+{% block content %}
+    
+<div class="container">
+    {% for data in datas %}
+        <div class="col-lg-6 mt-3 mb-3 border p-3 d-flex flex-column justify-content-center ">
+
+            <h2 style="font-size:18px">Titre: {{data.name}}</h2>
+            <img src={{data.image}}>
+            <p>Description: {{data.description}}</p>
+            <b>Lien: {{data.link}}</b>
+
+        </div>
+    {% endfor %}
+</div>
+        
+{% endblock content %}
+    

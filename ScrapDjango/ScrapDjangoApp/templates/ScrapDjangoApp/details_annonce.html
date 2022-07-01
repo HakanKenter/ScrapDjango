@@ -1,0 +1,23 @@
+{% extends "ScrapDjangoApp/base.html" %}
+
+
+{% block title %}
+    Détails Annonce
+{% endblock title %}
+    
+{% block content %}
+    
+
+    <div class="col-lg-4 mt-3 mb-3 border p-3 d-flex flex-column justify-content-center ">
+        <h2>Titre: {{Annonce_object.title}}</h2>
+        <img src={{Annonce_object.photo}}>
+        <p>Description: {{Annonce_object.description}}</p>
+        <b>Prix: {{Annonce_object.prix}}</b>
+
+        <a class="mt-2 mb-2" href="{% url 'update_annonce' Annonce_object.id %}"><button>Changer</button></a>
+        <a class="mt-2 mb-2" href="{% url 'delete_annonce' Annonce_object.id %}"><button>Supprimer</button></a>
+    </div>
+    
+
+{% endblock content %}
+    

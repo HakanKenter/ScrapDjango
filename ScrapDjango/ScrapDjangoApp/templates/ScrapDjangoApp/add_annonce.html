@@ -1,0 +1,23 @@
+{% extends "ScrapDjangoApp/base.html" %}
+
+{% block title %}
+    Ajouter une annonce
+{% endblock title %}
+
+
+{% block h1title %}
+    Ajouter une annonce
+{% endblock h1title %}  
+
+{% block content %}
+    
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Ajouter</button>
+    </form>
+</div>
+        
+{% endblock content %}
+    
